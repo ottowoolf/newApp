@@ -1,20 +1,35 @@
-import React from 'react';
+import React from "react";
 
 const Navigation = ({ onRouteChange, isSignedIn }) => {
-    if (isSignedIn) {
-      return (
-        <nav style={{display: 'flex', justifyContent: 'flex-end'}}>
-          <p onClick={() => onRouteChange('signout')} className='f3 link dim black underline pa3 pointer'>Sign Out</p>
-        </nav>
-      );
-    } else {
-      return (
-        <nav style={{display: 'flex', justifyContent: 'flex-end'}}>
-          <p onClick={() => onRouteChange('signin')} className='f3 link dim black underline pa3 pointer'>Sign In</p>
-          <p onClick={() => onRouteChange('register')} className='f3 link dim black underline pa3 pointer'>Register</p>
-        </nav>
-      );
-    }
-}
+  if (isSignedIn) {
+    return (
+      <nav class='flex justify-end bb b--white-10 mb3 pt3 bg-black'>
+        <p
+          onClick={() => onRouteChange("signout")}
+          class='f6 dib white bg-animate hover-bg-white hover-black no-underline pv2 ph4 m2 br-pill ba b--white-20 pointer'
+        >
+          Sign Out
+        </p>
+      </nav>
+    );
+  } else {
+    return (
+      <nav class='flex justify-end bb b--white-10 mb3 pt3 bg-black'>
+        <p
+          onClick={() => onRouteChange("signin")}
+          class='f6 dib white bg-animate hover-bg-white hover-black no-underline pv2 ph4 m2 br-pill ba b--white-20 pointer'
+        >
+          Sign In
+        </p>
+        <p
+          onClick={() => onRouteChange("register")}
+          class='f6 dib white bg-animate hover-bg-white hover-black no-underline pv2 ph4 br-pill ba b--white-20 pointer mh3'
+        >
+          Register
+        </p>
+      </nav>
+    );
+  }
+};
 
 export default Navigation;
